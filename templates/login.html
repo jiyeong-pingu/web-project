@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0; padding: 0; height: 100vh;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            display: flex; justify-content: center; align-items: center; font-family: 'Arial', sans-serif;
+        }
+        .login-box { text-align: center; color: white; width: 300px; }
+        h2 { font-size: 2.5em; margin-bottom: 30px; font-weight: 300; }
+        input {
+            width: 100%; background: none; border: none;
+            border-bottom: 1px solid white; margin-bottom: 10px;
+            padding: 10px 0; color: white; outline: none; font-size: 1em;
+        }
+        input::placeholder { color: rgba(255,255,255,0.7); }
+        .error-msg {
+            color: #ff4d4d; font-size: 0.85em; text-align: left;
+            margin-bottom: 20px; min-height: 1.2em; font-weight: bold;
+        }
+        button {
+            width: 100%; padding: 12px; background: #3b5998;
+            border: none; color: white; cursor: pointer; font-weight: bold; margin-top: 10px;
+        }
+        .link { color: white; text-decoration: none; font-size: 0.8em; margin-top: 20px; display: inline-block; opacity: 0.8; }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <h2>User Login</h2>
+        <form method="post">
+            <input type="text" name="user_id" placeholder="ID" required>
+            <input type="password" name="user_pw" placeholder="Password" required>
+            <div class="error-msg">
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    {{ messages[0] }}
+                  {% endif %}
+                {% endwith %}
+            </div>
+            <button type="submit">LOGIN</button>
+        </form>
+        <a href="/signup" class="link">Don't have an account? Sign Up</a>
+    </div>
+</body>
+</html>

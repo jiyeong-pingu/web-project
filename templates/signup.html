@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0; padding: 0; height: 100vh;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            display: flex; justify-content: center; align-items: center; font-family: 'Arial', sans-serif;
+        }
+        .box { text-align: center; color: white; width: 300px; }
+        h2 { font-size: 2.5em; margin-bottom: 30px; font-weight: 300; }
+        input {
+            width: 100%; background: none; border: none;
+            border-bottom: 1px solid white; margin-bottom: 25px;
+            padding: 10px 0; color: white; outline: none;
+        }
+        button {
+            width: 100%; padding: 12px; background: #3b5998;
+            border: none; color: white; cursor: pointer; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Sign Up</h2>
+        <form method="post">
+            <input type="text" name="user_id" placeholder="Create ID" required>
+            <input type="password" name="user_pw" placeholder="Create Password" required>
+            <button type="submit">REGISTER</button>
+        </form>
+    </div>
+</body>
+</html>

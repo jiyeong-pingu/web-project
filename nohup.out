@@ -1,0 +1,32 @@
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.31.19.206:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 124-514-331
+127.0.0.1 - - [02/Apr/2026 08:54:18] "GET /login HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 08:54:56] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 08:54:56] "[33mGET /favicon.ico HTTP/1.0[0m" 404 -
+127.0.0.1 - - [02/Apr/2026 08:54:59] "GET /login HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 08:55:08] "GET /signup HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 08:55:16] "[32mPOST /signup HTTP/1.0[0m" 302 -
+127.0.0.1 - - [02/Apr/2026 08:55:16] "GET /login HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 08:55:19] "GET /signup HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 08:55:23] "[32mPOST /signup HTTP/1.0[0m" 302 -
+127.0.0.1 - - [02/Apr/2026 08:55:23] "GET /login HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 08:55:34] "[32mPOST /login HTTP/1.0[0m" 302 -
+127.0.0.1 - - [02/Apr/2026 08:55:35] "GET /login HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 08:55:41] "[32mPOST /login HTTP/1.0[0m" 302 -
+127.0.0.1 - - [02/Apr/2026 08:55:41] "GET /profile HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 08:55:52] "[32mGET /logout HTTP/1.0[0m" 302 -
+127.0.0.1 - - [02/Apr/2026 08:55:52] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 08:55:54] "GET /signup HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 09:00:45] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 09:11:31] "GET / HTTP/1.0" 200 -
+127.0.0.1 - - [02/Apr/2026 09:16:23] "[33mGET /wp-admin/setup-config.php HTTP/1.0[0m" 404 -
+127.0.0.1 - - [02/Apr/2026 09:17:29] "[33mGET /wordpress/wp-admin/setup-config.php HTTP/1.0[0m" 404 -
+127.0.0.1 - - [02/Apr/2026 09:18:14] "[33mGET /wordpress/wp-admin/setup-config.php HTTP/1.0[0m" 404 -
