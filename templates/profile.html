@@ -1,35 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>프로필 - Jizero</title>
     <style>
-        body {
-            margin: 0; padding: 0; height: 100vh;
-            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-            display: flex; justify-content: center; align-items: center; font-family: 'Arial', sans-serif;
-        }
-        .profile-card {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 45px; border-radius: 20px; text-align: center;
-            color: white; backdrop-filter: blur(15px); 
-            border: 1px solid rgba(255,255,255,0.3);
-            width: 280px; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
-        }
-        h2 { font-weight: 300; margin-bottom: 10px; font-size: 1.2em; opacity: 0.9; }
-        .user-id { font-size: 2.2em; font-weight: bold; margin-bottom: 40px; display: block; letter-spacing: 1px; }
-        .logout-btn {
-            text-decoration: none; color: #3b5998; background: white;
-            padding: 12px 35px; border-radius: 8px; font-weight: bold; font-size: 0.9em;
-            transition: 0.3s; display: inline-block;
-        }
-        .logout-btn:hover { background: #f0f0f0; transform: translateY(-3px); }
+        body { margin: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100vh; display: flex; justify-content: center; align-items: center; font-family: 'Segoe UI', sans-serif; }
+        .container { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 50px; border-radius: 20px; color: white; text-align: center; border: 1px solid rgba(255, 255, 255, 0.18); width: 380px; }
+        .profile-pic { width: 80px; height: 80px; background: rgba(255,255,255,0.2); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
+        .logout-btn { display: inline-block; margin-top: 30px; padding: 10px 25px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 30px; border: 1px solid white; transition: 0.3s; }
+        .logout-btn:hover { background: white; color: #764ba2; }
     </style>
 </head>
 <body>
-    <div class="profile-card">
-        <h2>Welcome Back!</h2>
-        <span class="user-id">{{ user_id }}</span>
-        <a href="/logout" class="logout-btn">LOGOUT</a>
+    <div class="container">
+        <div class="profile-pic">👤</div>
+        <h1>Welcome!</h1>
+        <p style="font-size: 1.2em;"><strong>{{ user_id }}</strong>님, 반갑습니다.</p>
+        <p style="opacity: 0.7;">성공적으로 로그인되었습니다.</p>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
     </div>
 </body>
 </html>

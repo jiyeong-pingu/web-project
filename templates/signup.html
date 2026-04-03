@@ -5,108 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입 - Jizero</title>
     <style>
-        /* 기존 디자인과 통일된 스타일 */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .signup-container {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            width: 350px;
-            color: white;
-            text-align: center;
-        }
-
-        h2 { margin-bottom: 30px; font-weight: 300; letter-spacing: 2px; }
-
-        .input-group { margin-bottom: 15px; text-align: left; }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            border-radius: 8px;
-            color: white;
-            outline: none;
-            box-sizing: border-box;
-        }
-
-        input::placeholder { color: rgba(255, 255, 255, 0.7); }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            background: #ffffff;
-            color: #764ba2;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-
-        button:hover { background: rgba(255, 255, 255, 0.8); transform: translateY(-2px); }
-
-        .flash-msg {
-            background: rgba(255, 82, 82, 0.2);
-            border-left: 4px solid #ff5252;
-            padding: 10px;
-            margin-bottom: 20px;
-            font-size: 0.85em;
-            text-align: left;
-        }
-
-        .back-link {
-            margin-top: 20px;
-            font-size: 0.8em;
-        }
-
-        .back-link a { color: white; text-decoration: none; opacity: 0.7; }
-        .back-link a:hover { opacity: 1; text-decoration: underline; }
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 100vh; display: flex; justify-content: center; align-items: center; }
+        .container { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; width: 350px; color: white; text-align: center; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); border: 1px solid rgba(255, 255, 255, 0.18); }
+        h2 { margin-bottom: 25px; font-weight: 300; letter-spacing: 2px; }
+        input { width: 100%; padding: 12px; background: rgba(255, 255, 255, 0.2); border: none; border-radius: 8px; color: white; outline: none; box-sizing: border-box; margin-bottom: 5px; }
+        .input-guide { font-size: 0.75em; color: rgba(255, 255, 255, 0.6); text-align: left; margin-bottom: 15px; padding-left: 5px; }
+        button { width: 100%; padding: 12px; background: #ffffff; color: #764ba2; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.3s; }
+        .flash-msg { background: rgba(255, 255, 255, 0.2); padding: 10px; border-radius: 8px; margin-bottom: 20px; font-size: 0.85em; color: white; border: 1px solid rgba(255, 255, 255, 0.3); }
     </style>
 </head>
 <body>
-    <div class="signup-container">
+    <div class="container">
         <h2>SIGN UP</h2>
-
         {% with messages = get_flashed_messages() %}
           {% if messages %}
-            {% for message in messages %}
-              <div class="flash-msg">{{ message }}</div>
-            {% endfor %}
+            {% for message in messages %}<div class="flash-msg">{{ message }}</div>{% endfor %}
           {% endif %}
         {% endwith %}
-
         <form method="POST">
-            <div class="input-group">
-                <input type="text" name="username" placeholder="Username (4-12 chars)" required>
-            </div>
-            <div class="input-group">
-                <input type="password" name="password" placeholder="Password" required>
-            </div>
-            <div class="input-group">
-                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-            </div>
+            <input type="text" name="username" placeholder="Username" required>
+            <div class="input-guide">* 영문/숫자 4~12자 (한글 제외)</div>
+            <input type="password" name="password" placeholder="Password" required>
+            <div style="height: 15px;"></div>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+            <div class="input-guide">* 비밀번호를 한 번 더 입력해 주세요.</div>
             <button type="submit">CREATE ACCOUNT</button>
         </form>
-
-        <div class="back-link">
-            Already have an account? <a href="{{ url_for('login') }}">Login here</a>
-        </div>
+        <p style="margin-top: 20px; font-size: 0.8em;"><a href="{{ url_for('login') }}" style="color: white; text-decoration: none; opacity: 0.8;">Back to Login</a></p>
     </div>
 </body>
 </html>
